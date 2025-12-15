@@ -1,21 +1,99 @@
-/* CSS Variables */
+/* CSS Variables - Nyuchi Brand System v6 (Five African Minerals) */
 :root {
-    --primary: #2563eb;
-    --primary-dark: #1d4ed8;
-    --secondary: #f97316;
-    --bg-dark: #0f172a;
-    --bg-card: #1e293b;
-    --bg-light: #f8fafc;
-    --text-light: #f1f5f9;
-    --text-muted: #94a3b8;
-    --text-dark: #1e293b;
-    --border-color: #334155;
-    --gradient-start: #1e40af;
-    --gradient-end: #7c3aed;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --radius: 12px;
-    --radius-sm: 8px;
+    /* ========================================
+       Five African Minerals - Light Mode
+       All colors WCAG AAA (7:1+) on cream
+       ======================================== */
+    --gold-light: #5D4037;        /* 8.84:1 on cream */
+    --malachite-light: #004D40;   /* 9.33:1 on cream */
+    --cobalt-light: #0047AB;      /* 8.01:1 on cream */
+    --tanzanite-light: #4B0082;   /* 12.29:1 on cream */
+    --terracotta-light: #8B4513;  /* 7.2:1 on cream */
+
+    /* ========================================
+       Five African Minerals - Dark Mode
+       All colors WCAG AAA (7:1+) on charcoal
+       ======================================== */
+    --gold-dark: #FFD740;         /* 14.19:1 on charcoal - Nyuchi Platform */
+    --malachite-dark: #64FFDA;    /* 15.89:1 on charcoal - Growth, success */
+    --cobalt-dark: #00B0FF;       /* 8.16:1 on charcoal - Links, education */
+    --tanzanite-dark: #B388FF;    /* 7.43:1 on charcoal - Premium, social */
+    --terracotta-dark: #D4A574;   /* 8.5:1 on charcoal - Community, Ubuntu */
+
+    /* Container colors (for backgrounds) */
+    --gold-container: #332200;
+    --malachite-container: #00251A;
+    --cobalt-container: #001F3F;
+    --tanzanite-container: #1A0033;
+    --terracotta-container: #3E1A00;
+
+    /* ========================================
+       Active Theme (Dark Mode)
+       ======================================== */
+    --gold: var(--gold-dark);
+    --malachite: var(--malachite-dark);
+    --cobalt: var(--cobalt-dark);
+    --tanzanite: var(--tanzanite-dark);
+    --terracotta: var(--terracotta-dark);
+
+    /* Primary colors for Nyuchi Platform (Gold primary) */
+    --primary: var(--gold);       /* Gold - Nyuchi Platform primary */
+    --primary-dark: #FFC400;      /* Gold darker - hover states */
+    --secondary: var(--malachite); /* Malachite - growth, success */
+    --accent: var(--terracotta);  /* Terracotta - warmth, community */
+
+    /* ========================================
+       Surfaces
+       ======================================== */
+    /* Dark Mode Surfaces (charcoal base) */
+    --bg-dark: #0A0A0A;           /* Near black - charcoal base */
+    --bg-card: #141414;           /* Surface - cards */
+    --bg-elevated: #1E1E1E;       /* Surface bright - elevated */
+
+    /* Light Mode Surfaces */
+    --bg-light: #FAF9F5;          /* Warm cream */
+    --bg-surface-light: #FFFFFF;  /* White cards */
+    --bg-surface-dim: #F3F2EE;    /* Subtle sections */
+
+    /* ========================================
+       Text Colors
+       ======================================== */
+    /* Dark Mode Text */
+    --text-light: #F5F5F4;        /* Primary text on dark */
+    --text-muted: #A8A8A3;        /* Secondary text on dark */
+    --text-tertiary: #6B6B66;     /* Tertiary text on dark */
+
+    /* Light Mode Text */
+    --text-dark: #141413;         /* Primary text on light */
+    --text-dark-secondary: #52524E; /* Secondary text on light */
+    --text-dark-tertiary: #8C8B87; /* Tertiary text on light */
+
+    /* ========================================
+       Borders & Effects
+       ======================================== */
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-color-light: rgba(10, 10, 10, 0.08);
+    --gradient-start: var(--gold);
+    --gradient-end: var(--malachite);
+
+    /* Zimbabwe Flag Colors (4px vertical stripe on left edge) */
+    --flag-green: #00A651;        /* Flag Green */
+    --flag-yellow: #FDD116;       /* Flag Yellow */
+    --flag-red: #D4634A;          /* Sunset Red */
+    --flag-black: #171717;        /* Near Black */
+
+    /* Shadows */
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+
+    /* ========================================
+       Spacing (Nyuchi Brand System)
+       ======================================== */
+    --radius: 16px;               /* Card radius */
+    --radius-button: 12px;        /* Button radius - warm, modern (NOT 8px) */
+    --radius-sm: 8px;             /* Input/small element radius */
+    --radius-icon: 24px;          /* App icon radius */
+    --radius-badge: 9999px;       /* Pill-shaped badges */
     --transition: all 0.3s ease;
 }
 
@@ -31,11 +109,33 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background-color: var(--bg-dark);
     color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+/* Zimbabwe Flag Stripe - 4px vertical on left edge */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    z-index: 9999;
+    background: linear-gradient(
+        to bottom,
+        var(--flag-green) 0%,
+        var(--flag-green) 25%,
+        var(--flag-yellow) 25%,
+        var(--flag-yellow) 50%,
+        var(--flag-red) 50%,
+        var(--flag-red) 75%,
+        var(--flag-black) 75%,
+        var(--flag-black) 100%
+    );
 }
 
 /* Container */
@@ -45,19 +145,23 @@ body {
     padding: 0 24px;
 }
 
-/* Typography */
-h1, h2, h3 {
-    font-weight: 700;
-    line-height: 1.2;
-}
-
+/* Typography - Nyuchi Brand System */
 h1 {
+    font-family: 'Noto Serif', Georgia, serif;
+    font-weight: 700;
     font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, var(--text-light) 0%, var(--primary) 100%);
+    background: linear-gradient(135deg, var(--text-light) 0%, var(--primary) 50%, var(--accent) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 h2 {
@@ -83,9 +187,9 @@ h3 {
 }
 
 .navbar.scrolled {
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .navbar .container {
@@ -137,8 +241,8 @@ h3 {
 .btn-github {
     background: var(--primary);
     padding: 0.5rem 1rem;
-    border-radius: var(--radius-sm);
-    color: white !important;
+    border-radius: var(--radius-button);
+    color: var(--text-dark) !important;
 }
 
 .btn-github:hover {
@@ -168,8 +272,8 @@ h3 {
     display: flex;
     align-items: center;
     padding: 100px 0 60px;
-    background: radial-gradient(ellipse at 30% 0%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 100%, rgba(124, 58, 237, 0.1) 0%, transparent 50%),
+    background: radial-gradient(ellipse at 30% 0%, rgba(255, 215, 64, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 100%, rgba(100, 255, 218, 0.08) 0%, transparent 50%),
                 var(--bg-dark);
 }
 
@@ -191,7 +295,7 @@ h3 {
 }
 
 .location {
-    color: var(--secondary);
+    color: var(--accent);
     font-weight: 500;
     margin-bottom: 2rem;
     display: flex;
@@ -203,7 +307,7 @@ h3 {
     content: '';
     width: 8px;
     height: 8px;
-    background: var(--secondary);
+    background: var(--accent);
     border-radius: 50%;
 }
 
@@ -218,7 +322,7 @@ h3 {
     align-items: center;
     gap: 0.5rem;
     padding: 0.875rem 1.75rem;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-button);
     font-weight: 600;
     text-decoration: none;
     transition: var(--transition);
@@ -228,13 +332,13 @@ h3 {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--primary), var(--gradient-end));
-    color: white;
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    color: var(--text-dark);
+    box-shadow: 0 4px 15px rgba(255, 215, 64, 0.3);
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    box-shadow: 0 6px 20px rgba(255, 215, 64, 0.4);
 }
 
 .btn-secondary {
@@ -274,21 +378,21 @@ h3 {
 .card-1 {
     top: 20%;
     left: 10%;
-    background: linear-gradient(135deg, var(--primary), var(--gradient-end));
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     animation-delay: 0s;
 }
 
 .card-2 {
     top: 50%;
     right: 15%;
-    background: linear-gradient(135deg, var(--secondary), #dc2626);
+    background: linear-gradient(135deg, var(--accent), var(--primary));
     animation-delay: 2s;
 }
 
 .card-3 {
     bottom: 15%;
     left: 30%;
-    background: linear-gradient(135deg, #059669, #10b981);
+    background: linear-gradient(135deg, var(--secondary), #10b981);
     animation-delay: 4s;
 }
 
@@ -376,24 +480,24 @@ h3 {
 .project-card:hover {
     transform: translateY(-5px);
     border-color: var(--primary);
-    box-shadow: 0 10px 40px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 10px 40px rgba(255, 215, 64, 0.15);
 }
 
 .project-card.featured {
     grid-column: span 2;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+    background: linear-gradient(135deg, rgba(255, 215, 64, 0.08), rgba(100, 255, 218, 0.05));
 }
 
 .project-badge {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    background: var(--secondary);
-    color: white;
+    background: var(--accent);
+    color: var(--text-dark);
     font-size: 0.75rem;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    border-radius: 9999px;
 }
 
 .project-icon {
@@ -427,12 +531,12 @@ h3 {
 }
 
 .tech-tag {
-    background: rgba(37, 99, 235, 0.2);
+    background: rgba(255, 215, 64, 0.15);
     color: var(--primary);
     font-size: 0.75rem;
     font-weight: 500;
     padding: 0.25rem 0.75rem;
-    border-radius: 20px;
+    border-radius: 9999px;
 }
 
 .project-link {
@@ -496,7 +600,7 @@ h3 {
 
 .doc-link:hover {
     border-color: var(--primary);
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(255, 215, 64, 0.1);
 }
 
 .doc-tag {
@@ -537,7 +641,7 @@ h3 {
 .contact-card:hover {
     transform: translateY(-3px);
     border-color: var(--primary);
-    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.2);
+    box-shadow: 0 10px 30px rgba(255, 215, 64, 0.15);
 }
 
 .contact-card svg {
@@ -549,7 +653,7 @@ h3 {
 /* Footer */
 .footer {
     padding: 60px 0 30px;
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(10, 10, 10, 0.8);
     border-top: 1px solid var(--border-color);
 }
 
@@ -627,7 +731,7 @@ h3 {
         top: 70px;
         left: 0;
         right: 0;
-        background: rgba(15, 23, 42, 0.98);
+        background: rgba(10, 10, 10, 0.98);
         flex-direction: column;
         padding: 2rem;
         gap: 1.5rem;
