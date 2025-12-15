@@ -1,50 +1,94 @@
 /* CSS Variables - Nyuchi Brand System v6 (Five African Minerals) */
 :root {
-    /* Five African Minerals - Dark Mode (WCAG AAA compliant) */
-    --gold: #FFD740;              /* Nyuchi Platform primary - honey, rewards */
+    /* ========================================
+       Five African Minerals - Light Mode
+       All colors WCAG AAA (7:1+) on cream
+       ======================================== */
+    --gold-light: #5D4037;        /* 8.84:1 on cream */
+    --malachite-light: #004D40;   /* 9.33:1 on cream */
+    --cobalt-light: #0047AB;      /* 8.01:1 on cream */
+    --tanzanite-light: #4B0082;   /* 12.29:1 on cream */
+    --terracotta-light: #8B4513;  /* 7.2:1 on cream */
+
+    /* ========================================
+       Five African Minerals - Dark Mode
+       All colors WCAG AAA (7:1+) on charcoal
+       ======================================== */
+    --gold-dark: #FFD740;         /* 14.19:1 on charcoal - Nyuchi Platform */
+    --malachite-dark: #64FFDA;    /* 15.89:1 on charcoal - Growth, success */
+    --cobalt-dark: #00B0FF;       /* 8.16:1 on charcoal - Links, education */
+    --tanzanite-dark: #B388FF;    /* 7.43:1 on charcoal - Premium, social */
+    --terracotta-dark: #D4A574;   /* 8.5:1 on charcoal - Community, Ubuntu */
+
+    /* Container colors (for backgrounds) */
     --gold-container: #332200;
-    --malachite: #64FFDA;         /* Growth, nature, success */
     --malachite-container: #00251A;
-    --cobalt: #00B0FF;            /* Links, CTAs, education */
     --cobalt-container: #001F3F;
-    --tanzanite: #B388FF;         /* Premium, social features */
     --tanzanite-container: #1A0033;
-    --terracotta: #D4A574;        /* Community, earth, Ubuntu */
     --terracotta-container: #3E1A00;
 
-    /* Primary colors for Nyuchi Platform (Gold primary) */
-    --primary: #FFD740;           /* Gold - Nyuchi Platform primary */
-    --primary-dark: #FFC400;      /* Gold darker - hover states */
-    --secondary: #64FFDA;         /* Malachite - growth, success */
-    --accent: #D4A574;            /* Terracotta - warmth, community */
+    /* ========================================
+       Active Theme (Dark Mode)
+       ======================================== */
+    --gold: var(--gold-dark);
+    --malachite: var(--malachite-dark);
+    --cobalt: var(--cobalt-dark);
+    --tanzanite: var(--tanzanite-dark);
+    --terracotta: var(--terracotta-dark);
 
+    /* Primary colors for Nyuchi Platform (Gold primary) */
+    --primary: var(--gold);       /* Gold - Nyuchi Platform primary */
+    --primary-dark: #FFC400;      /* Gold darker - hover states */
+    --secondary: var(--malachite); /* Malachite - growth, success */
+    --accent: var(--terracotta);  /* Terracotta - warmth, community */
+
+    /* ========================================
+       Surfaces
+       ======================================== */
     /* Dark Mode Surfaces (charcoal base) */
     --bg-dark: #0A0A0A;           /* Near black - charcoal base */
     --bg-card: #141414;           /* Surface - cards */
     --bg-elevated: #1E1E1E;       /* Surface bright - elevated */
-    --bg-light: #FAF9F5;          /* Warm cream - light mode */
 
-    /* Text Colors */
-    --text-light: #FAFAFA;        /* Near white for dark backgrounds */
-    --text-muted: #8C8B87;        /* Tertiary text */
+    /* Light Mode Surfaces */
+    --bg-light: #FAF9F5;          /* Warm cream */
+    --bg-surface-light: #FFFFFF;  /* White cards */
+    --bg-surface-dim: #F3F2EE;    /* Subtle sections */
+
+    /* ========================================
+       Text Colors
+       ======================================== */
+    /* Dark Mode Text */
+    --text-light: #F5F5F4;        /* Primary text on dark */
+    --text-muted: #A8A8A3;        /* Secondary text on dark */
+    --text-tertiary: #6B6B66;     /* Tertiary text on dark */
+
+    /* Light Mode Text */
     --text-dark: #141413;         /* Primary text on light */
+    --text-dark-secondary: #52524E; /* Secondary text on light */
+    --text-dark-tertiary: #8C8B87; /* Tertiary text on light */
 
-    /* Borders & Accents */
+    /* ========================================
+       Borders & Effects
+       ======================================== */
     --border-color: rgba(255, 255, 255, 0.08);
-    --gradient-start: #FFD740;    /* Gold */
-    --gradient-end: #64FFDA;      /* Malachite */
+    --border-color-light: rgba(10, 10, 10, 0.08);
+    --gradient-start: var(--gold);
+    --gradient-end: var(--malachite);
 
     /* Zimbabwe Flag Colors */
     --flag-green: #00A651;
     --flag-yellow: #FDD116;
-    --flag-red: #EF4444;
-    --flag-black: #0A0A0A;
+    --flag-red: #D4634A;
+    --flag-black: #171717;
 
     /* Shadows */
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 
-    /* Spacing (Nyuchi Brand System) */
+    /* ========================================
+       Spacing (Nyuchi Brand System)
+       ======================================== */
     --radius: 16px;               /* Card radius */
     --radius-button: 12px;        /* Button radius - warm, modern */
     --radius-sm: 8px;             /* Input/small element radius */
