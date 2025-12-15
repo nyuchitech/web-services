@@ -76,11 +76,11 @@
     --gradient-start: var(--gold);
     --gradient-end: var(--malachite);
 
-    /* Zimbabwe Flag Colors */
-    --flag-green: #00A651;
-    --flag-yellow: #FDD116;
-    --flag-red: #D4634A;
-    --flag-black: #171717;
+    /* Zimbabwe Flag Colors (4px vertical stripe on left edge) */
+    --flag-green: #00A651;        /* Flag Green */
+    --flag-yellow: #FDD116;       /* Flag Yellow */
+    --flag-red: #D4634A;          /* Sunset Red */
+    --flag-black: #171717;        /* Near Black */
 
     /* Shadows */
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -90,8 +90,10 @@
        Spacing (Nyuchi Brand System)
        ======================================== */
     --radius: 16px;               /* Card radius */
-    --radius-button: 12px;        /* Button radius - warm, modern */
+    --radius-button: 12px;        /* Button radius - warm, modern (NOT 8px) */
     --radius-sm: 8px;             /* Input/small element radius */
+    --radius-icon: 24px;          /* App icon radius */
+    --radius-badge: 9999px;       /* Pill-shaped badges */
     --transition: all 0.3s ease;
 }
 
